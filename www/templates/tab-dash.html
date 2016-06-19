@@ -1,0 +1,15 @@
+<ion-view view-title="Intro">
+  <ion-content class="padding">
+    <td-cards>
+      <td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}" style="background-color: white;">
+        <div class="image" ng-controller="CardCtrl" style="padding: 5px;">
+          <div class="no-text">NOPE</div>
+          <h3>{{card.headline}}</h3>
+          <p>{{card.abstract}}</p>
+          <p class="text-right">{{card.created_at}}</p>
+          <div class="yes-text">LIKE</div>
+        </div>
+      </td-card>
+    </td-cards>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-view>
+  <ion-nav-title>
+    <span ng-if="articles.length > 0">All Groups</span>
+    <span ng-if="articles.length == 0">Loading...</span>
+  </ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="a in articles" type="item-text-wrap" href="#/tab/articles/{{a.id}}">
+        <h2>{{a.id}}. {{a.headline}}</h2>
+        <p>{{a.abstract}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

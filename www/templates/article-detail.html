@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-nav-title>
+    {{article.section}}
+  </ion-nav-title>
+  <ion-content class="padding">
+    <h3>{{article.headline}}</h3>
+    <p>
+    {{article.abstract}}
+    </p>
+    <p class="text-right"><a href="{{article.url}}" target="_blank">Link</a></p>
+    <p class="text-right">{{article.published_at}}</p>
+
+    <ion-list>
+      <div class="item item-divider">
+        Similar News({{similar_articles.length}})
+      </div>
+      <ion-item class="item-icon-right" ng-repeat="a in similar_articles" type="item-text-wrap" href="#/tab/articles/{{a.id}}" ng-if="a.id != article.id">
+        <h2>{{a.id}}. {{a.headline}}</h2>
+        <p>{{a.abstract}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
